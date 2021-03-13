@@ -9,7 +9,7 @@
           max-width="350"
         >
           <v-card-text class="my-4 text-center title">
-            Hover over me!
+            {{ user.user }}
           </v-card-text>
         </v-card>
       </v-hover>
@@ -18,7 +18,18 @@
 </template>
 
 <script>
+import firebase from "firebase/app";
+
 export default {
-  name: "Home"
+  name: "Home",
+  data() {
+    return {
+      user: localStorage.getItem("user")
+    };
+  },
+  created() {
+    firebase;
+    console.log(localStorage.getItem("user"));
+  }
 };
 </script>
